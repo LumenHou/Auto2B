@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<root>
+	<action>
+		<click>
+			<moudel>Common</moudel>
+			<name>click_comm('$type', elementsMap['$pageName']['$keys'], '$value')</name>
+		</click>
+		<input>
+			<moudel>Common</moudel>
+			<name>input_comm('$type', elementsMap['$pageName']['$keys'], '$value')</name>
+		</input>
+		<switch_to>
+			<moudel>Common</moudel>
+			<name>switchtoframe('$type', elementsMap['$pageName']['$keys'])</name>
+		</switch_to>
+		<clear>
+		</clear>
+		<screenshot>
+				<moudel>Common</moudel>
+				<name>screenshot_window('$keys','$value')</name>
+		</screenshot>
+		<pagescreen>
+				<moudel>Common</moudel>
+				<name>screenshot_page('$keys', '$value')</name>
+		</pagescreen>
+		<check>
+			<moudel>Common</moudel>
+			<name>checkbox_comm(elementsMap['$pageName']['$keys'], '$value')</name>
+		</check>
+		<press>
+			<moudel>Common</moudel>
+			<name>keyboard('$type', elementsMap['$pageName']['$keys'], '$value')</name>
+		</press>
+		<scroll>
+				<moudel>Common</moudel>
+				<name>scroll_comm('$value')</name>
+		</scroll>
+		<select>
+				<moudel>Common</moudel>
+				<name>dropdown('$type', elementsMap['$pageName']['$keys'], '$value')</name>
+		</select>
+		<tableSelect>
+				<moudel>Common</moudel>
+				<name>tableSelect('$value')</name>
+		</tableSelect>
+		<find>
+				<moudel>Common</moudel>
+				<name>find_element('$type', elementsMap['$pageName']['$keys'])</name>
+		</find>
+		<movecursor>
+				<moudel>Common</moudel>
+				<name>movecursor('$type', elementsMap['$pageName']['$keys'])</name>
+		</movecursor>
+		<viewmove>
+				<moudel>Common</moudel>
+				<name>movetoelement('$type', elementsMap['$pageName']['$keys'])</name>
+		</viewmove>
+		<NewURL>
+				<moudel>Common</moudel>
+				<name>NewURL('$value')</name>
+		</NewURL>
+		<WindowSize>
+				<moudel>Common</moudel>
+				<name>Window_size('$value')</name>
+		</WindowSize>
+		<sleep>
+				<moudel>Common</moudel>
+				<name>wait('$value')</name>
+		</sleep>
+	</action>
+	<special>
+		<switch_default>
+			<moudel>Common</moudel>
+			<name>swithback()</name>
+		</switch_default>
+		<back>
+			<moudel>Common</moudel>
+			<name>back()</name>
+		</back>
+		<close>
+			<moudel>Common</moudel>
+			<name>close()</name>
+		</close>
+		<SwitchWindow>
+			<moudel>Common</moudel>
+			<name>Switch_window()</name>
+		</SwitchWindow>
+	</special>
+</root>

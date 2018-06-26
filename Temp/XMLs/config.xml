@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <URL>'https://live.itg3.hp2b.hp.com'</URL>
+    <Browser>firefox</Browser>
+    <ScriptPath>CaseXmls</ScriptPath>
+    <ScriptName>case.xml</ScriptName>
+	<Common>XMLs\Common.xml</Common>
+    <OutputPath>Output\</OutputPath>
+</config>

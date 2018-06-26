@@ -1,0 +1,1657 @@
+<Scripts>
+    <LoginPage>
+        <ChangeLanguage>
+            <action>
+                <step action="click" keys="LanguageDropdown" type="id"/>
+                <step action="tableSelect" value="$Language"/>
+            </action>
+            <script>
+                <StepResult description="Select a language from the 'Language' dropdown list."
+                            result="The selected language is displayed in the 'Language' field. "/>
+            </script>
+        </ChangeLanguage>
+        <CELogin>
+            <action>
+                <step action="input" keys="UsernameTextbox" type="name" value="$Username"/>
+                <step action="input" keys="PasswordTextbox" type="name" value="$Password"/>
+                <step action="screenshot" keys="$num" value="Login"/>
+                <step action="click" keys="LoginButton" type="id"/>
+                <step action="switch_to" keys="WelcomeIframe" type="xpath"/>
+                <step action="click" keys="WelcomeIframeCloseButton" type="xpath"/>
+                <step special="switch_default"/>
+                <step action="pagescreen" keys="$num" value="HomePage"/>
+            </action>
+            <script>
+                <StepResult description="Select a language from the 'Language' dropdown list."
+                            result="The selected language is displayed in the 'Language' field. "/>
+                <StepResult description="Enter &lt;&lt;&lt;User id&gt;&gt;&gt; in the Username field"
+                            result="User ID is entered."/>
+                <StepResult description="Enter &lt;&lt;&lt;password&gt;&gt;&gt; in the Password field"
+                            result="Password is entered."/>
+                <StepResult description="Click the 'Log in' button. "
+                            result="The customer user has successfully logged in to the HP2B home page."/>
+            </script>
+        </CELogin>
+        <CSRLogin>
+            <action>
+                <step action="input" keys="UsernameTextbox" type="name" value="$CSRUsername"/>
+                <step action="input" keys="PasswordTextbox" type="name" value="$CSRPassword"/>
+                <step action="screenshot" keys="$num" value="login"/>
+                <step action="find" keys="LoginButton" type="id"/>
+                <step action="viewmove" keys="LoginButton" type="id"/>
+                <step action="click" keys="LoginButton" type="id"/>
+                <step action="switch_to" keys="WelcomeIframe" type="xpath"/>
+                <step action="click" keys="WelcomeIframeCloseButton" type="xpath"/>
+                <step special="switch_default"/>
+                <step action="pagescreen" keys="$num" value="CSRHomePage"/>
+            </action>
+            <script>
+                <StepResult description="Select a language from the 'Language' dropdown list."
+                            result="The selected language is displayed in the 'Language' field. "/>
+                <StepResult description="Enter &lt;&lt;&lt;User id&gt;&gt;&gt; in the Username field"
+                            result="User ID is entered."/>
+                <StepResult description="Enter &lt;&lt;&lt;password&gt;&gt;&gt; in the Password field"
+                            result="Password is entered."/>
+                <StepResult description="Click the 'Log in' button. "
+                            result="The customer user has successfully logged in to the HP2B home page."/>
+            </script>
+        </CSRLogin>
+        <ImpersonateByUserID>
+            <action>
+                <step action="click" keys="SearchOption" type="xpath"/>
+                <step action="input" keys="UserID" type="xpath" value="$UserID"/>
+                <step action="click" keys="CSRSearchButton" type="xpath"/>
+                <step action="click" keys="GearIcon" type="xpath"/>
+                <step action="pagescreen" keys="$num" value="ImpersonateByUserID"/>
+                <step action="click" keys="ImpersonateLink" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Impersonate By User ID." result="The User is impersonate. "/>
+            </script>
+        </ImpersonateByUserID>
+    </LoginPage>
+    <CategoryPage>
+        <imageGotoPDP>
+            <action>
+                <step action="find" keys="ProductImage" type="xpath"/>
+                <step action="viewmove" keys="ProductImage" type="xpath"/>
+            </action>
+        </imageGotoPDP>
+        <ClickProductImage>
+            <action>
+                <step action="click" keys="ProductImage" type="xpath"/>
+            </action>
+        </ClickProductImage>
+    </CategoryPage>
+    <GlobalHead>
+        <GoFavorites>
+            <action>
+                <step action="click" keys="ProductsServicesLink" type="xpath"/>
+                <step action="find" keys="FavroitesLink" type="xpath"/>
+                <step action="viewmove" keys="FavroitesLink" type="xpath"/>
+                <step action="click" keys="FavroitesLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="FavoritesField"/>
+            </action>
+            <script>
+                <StepResult description="Navigation to Favorites listing page."
+                            result="The Favorites listing page is displayed"/>
+            </script>
+        </GoFavorites>
+        <GoToMyAccount>
+            <action>
+                <step action="find" keys="MyAccountIcon" type="id"/>
+                <step action="viewmove" keys="MyAccountIcon" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the My Account breadcrumb."
+                            result="The My Account Summary page is displayed"/>
+            </script>
+        </GoToMyAccount>
+        <ClickMyAccountIcon>
+            <action>
+                <step action="find" keys="MyAccountIcon" type="id"/>
+                <step action="viewmove" keys="MyAccountIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="ClickAccountIcon"/>
+                <step action="click" keys="MyAccountIcon" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the My Account Icon."
+                            result="The My Account Icon is clicked"/>
+            </script>
+        </ClickMyAccountIcon>
+        <SearchProduct>
+            <action>
+                <step action="input" keys="SearchProductBox" type="id" value="$product"/>
+                <step action="find" keys="SearchIcon" type="id"/>
+                <step action="viewmove" keys="SearchIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="SearchProduct"/>
+                <step action="click" keys="SearchIcon" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Enter a valid product number in the search box at the top right."
+                            result="The product number is entered."/>
+                <StepResult description="Click the search icon."
+                            result="The product detail page of the searched product is displayed. Note: If there are many products containing this product number, the page is search result page."/>
+            </script>
+        </SearchProduct>
+        <BackHomeByIcon>
+            <action>
+                <step action="find" keys="HomeIcon" type="id"/>
+                <step action="viewmove" keys="HomeIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="ClickHomeIcon"/>
+                <step action="click" keys="HomeIcon" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the HP icon." result="The HP icon is clicked"/>
+                <StepResult description="View the page is displayed" result="The HP2B store home page is displayed"/>
+            </script>
+        </BackHomeByIcon>
+        <ClickHomeLogo>
+            <action>
+                <step action="find" keys="HomeIcon" type="id"/>
+                <step action="viewmove" keys="HomeIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="ClickHomeIcon"/>
+                <step action="click" keys="HomeIcon" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the HP icon." result="The HP icon is clicked"/>
+                <StepResult description="View the page is displayed" result="The HP2B store home page is displayed"/>
+            </script>
+        </ClickHomeLogo>
+        <BackHomeByLink>
+            <action>
+                <step action="find" keys="HomeLink" type="xpath"/>
+                <step action="viewmove" keys="HomeLink" type="xpath"/>
+                <step action="click" keys="HomeLink" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Home' link on the top navigation bar."
+                            result="The HP2B store home page is displayed"/>
+            </script>
+        </BackHomeByLink>
+        <ClickHomeLink>
+            <action>
+                <step action="find" keys="HomeLink" type="xpath"/>
+                <step action="viewmove" keys="HomeLink" type="xpath"/>
+                <step action="click" keys="HomeLink" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Home' link on the top navigation bar."
+                            result="The HP2B store home page is displayed"/>
+            </script>
+        </ClickHomeLink>
+        <ChangeOrgCatalog>
+            <action>
+                <step action="click" keys="SelectYourView" type="class_name"/>
+                <step action="click" keys="CatalogDropdown" type="xpath"/>
+                <step action="tableSelect" value="$Catalog"/>
+                <step action="screenshot" keys="$num" value="ChangeCatalog"/>
+                <step action="click" keys="SelectYourViewOKbutton" type="xpath"/>
+                <step action="find" keys="ConfirmCatalogChangeOKbutton" type="xpath"/>
+                <step action="viewmove" keys="ConfirmCatalogChangeOKbutton" type="xpath"/>
+                <step action="click" keys="ConfirmCatalogChangeOKbutton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult
+                        description="Click the organization selector in the header to open the 'Select your view' window."
+                        result="The 'Select your view' window is displayed."/>
+                <StepResult
+                        description="Select the &lt;&lt;&lt;Organization&gt;&gt;&gt; from the dropdown list in the 'Select your view' window."
+                        result="The selected organization is displayed in the header."/>
+                <StepResult
+                        description="Select the &lt;&lt;&lt;Catalog&gt;&gt;&gt; from the dropdown list in the 'Select your view' window."
+                        result="The selected catalog is displayed in the header."/>
+                <StepResult description="Click the 'Apply' button in the &#8220;Select your view' window."
+                            result="The HP2B store home page is refreshed with the selected organization and catalog displayed in the header."/>
+            </script>
+        </ChangeOrgCatalog>
+        <ChangeLanguage>
+            <action>
+                <step action="click" keys="LanguageMenu" type="xpath"/>
+                <step action="click" keys="LanguageSelection" type="xpath"/>
+                <step action="click" keys="xxx" type="id"/>
+                <step action="find" keys="LanguageApplyButton" type="xpath"/>
+                <step action="viewmove" keys="LanguageApplyButton" type="xpath"/>
+                <step action="click" keys="LanguageApplyButton" type="xpath"/>
+                <step action="click" keys="LanguageMenu" type="xpath"/>
+                <step action="click" keys="LanguageSelection" type="xpath"/>
+                <step action="click" keys="xxx" type="id"/>
+                <step action="click" keys="LanguageApplyButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the language selection dropdown on the header of the page."
+                            result="The 'Select Your Language' section is displayed"/>
+                <StepResult description="Click the language dropdown." result="The language list is displayed"/>
+                <StepResult description="Choose your desired language." result="The desired language is selected"/>
+                <StepResult description="Click the 'Apply' button."
+                            result="The page is refreshed and displayed with the chosen language."/>
+            </script>
+        </ChangeLanguage>
+        <Logout>
+            <action>
+                <step action="find" keys="LogoutLink" type="xpath"/>
+                <step action="viewmove" keys="LogoutLink" type="xpath"/>
+                <step action="click" keys="LogoutLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="Logout"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Log Out' link at the top of the page."
+                            result="The HP2B store login page is displayed."/>
+                <StepResult description="The user is logout successfully."
+                            result="The HP2B store login page is displayed."/>
+            </script>
+        </Logout>
+        <ClickMiniCartIcon>
+            <action>
+                <step action="click" keys="MiniCartIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="MiniCartIconOverlay"/>
+            </action>
+        </ClickMiniCartIcon>
+        <ClickMiniCartIconToCart>
+            <action>
+                <step action="click" keys="MiniCartIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="GoCartByIcon"/>
+                <step action="find" keys="MiniCartButton" type="id"/>
+                <step action="viewmove" keys="MiniCartButton" type="id"/>
+                <step action="screenshot" keys="$num" value="MiniCartIconToCart"/>
+                <step action="click" keys="MiniCartButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the ShoppingCartIcon."
+                            result="The MiniCart overlay is displayed"/>
+                <StepResult description="Click the Go to Cart button."
+                            result="The shopping cart is displayed"/>
+            </script>
+        </ClickMiniCartIconToCart>
+        <GoCartByIcon>
+            <action>
+                <step action="click" keys="MiniCartIcon" type="id"/>
+                <step action="screenshot" keys="$num" value="GoCartByIcon"/>
+                <step action="find" keys="MiniCartButton" type="id"/>
+                <step action="viewmove" keys="MiniCartButton" type="id"/>
+                <step action="screenshot" keys="$num" value="MiniCartIconToCart"/>
+                <step action="click" keys="MiniCartButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the ShoppingCartIcon."
+                            result="The MiniCart overlay is displayed"/>
+                <StepResult description="Click the Go to Cart button."
+                            result="The shopping cart is displayed"/>
+            </script>
+        </GoCartByIcon>
+        <GoCartPage>
+            <action>
+                <step action="click" keys="MiniShoppingCart" type="id"/>
+                <step action="screenshot" value="GoToCartOverlay"/>
+                <step action="find" keys="GoToCart" type="xpath"/>
+                <step action="viewmove" keys="GoToCart" type="xpath"/>
+                <step action="click" keys="GoToCart" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the shopping cart icon in the right corner on the homepage."
+                            result="The mini cart overlay is opened."/>
+                <StepResult description="Click the 'Go to Cart' button." result="The shopping cart page is displayed"/>
+            </script>
+        </GoCartPage>
+        <ClickStandardsLink>
+            <action>
+                <step action="click" keys="ProductsServicesLink" type="xpath"/>
+                <step action="click" keys="StandardsLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="StandardsPage"/>
+            </action>
+        </ClickStandardsLink>
+        <ClickFavroitesLink>
+            <action>
+                <step action="click" keys="ProductsServicesLink" type="xpath"/>
+                <step action="find" keys="FavroitesLink" type="xpath"/>
+                <step action="viewmove" keys="FavroitesLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="FavoritesField"/>
+                <step action="click" keys="FavroitesLink" type="xpath"/>
+            </action>
+        </ClickFavroitesLink>
+        <ClickHPCatalogLink>
+            <action>
+                <step action="click" keys="ProductsServicesLink" type="xpath"/>
+                <step action="find" keys="HPCatalogLink" type="xpath"/>
+                <step action="viewmove" keys="HPCatalogLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="HPCatalogPage"/>
+                <step action="click" keys="HPCatalogLink" type="xpath"/>
+            </action>
+        </ClickHPCatalogLink>
+        <ClickCategorypageLink>
+            <action>
+                <step action="click" keys="ProductsServicesLink" type="xpath"/>
+                <step action="find" keys="CategorypageLink" type="xpath" value="$Category"/>
+                <step action="viewmove" keys="CategorypageLink" type="xpath" value="$Category"/>
+                <step action="screenshot" keys="$num" value="CategoryPage"/>
+                <step action="click" keys="CategorypageLink" type="xpath" value="$Category"/>
+            </action>
+        </ClickCategorypageLink>
+        <GoOrders>
+            <action>
+                <step action="click" keys="OrderQuotes" type="xpath"/>
+                <step action="find" keys="FavroitesLink" type="xpath"/>
+                <step action="viewmove" keys="FavroitesLink" type="xpath"/>
+                <step action="click" keys="FavroitesLink" type="xpath"/>
+                <step action="click" keys="OrdersLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="OrderListingPage"/>
+            </action>
+        </GoOrders>
+        <GoQuotes>
+            <action>
+                <step action="click" keys="OrderQuotes" type="xpath"/>
+                <step action="find" keys="StandardsLink" type="xpath"/>
+                <step action="viewmove" keys="StandardsLink" type="xpath"/>
+                <step action="click" keys="StandardsLink" type="xpath"/>
+                <step action="click" keys="QuotesLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="QuotesListingPage"/>
+            </action>
+        </GoQuotes>
+        <GoPRPage>
+            <action>
+                <step action="click" keys="OrderQuotes" type="xpath"/>
+                <step action="find" keys="HPCatalogLink" type="xpath"/>
+                <step action="viewmove" keys="HPCatalogLink" type="xpath"/>
+                <step action="click" keys="HPCatalogLink" type="xpath"/>
+                <step action="click" keys="PurchaseRequestsLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="PRListingPage"/>
+            </action>
+        </GoPRPage>
+        <GoReports>
+            <action>
+                <step action="screenshot" keys="$num" value="GoReports"/>
+                <step action="find" keys="ReportLink" type="xpath"/>
+                <step action="viewmove" keys="ReportLink" type="xpath"/>
+                <step action="click" keys="ReportLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="GoReports"/>
+            </action>
+        </GoReports>
+        <CSRLink>
+            <action>
+                <step action="find" keys="CSRLink" type="id"/>
+                <step action="viewmove" keys="CSRLink" type="id"/>
+            </action>
+        </CSRLink>
+        <ClickCSRLink>
+            <action>
+                <step action="click" keys="CSRLink" type="id"/>
+                <step action="screenshot" keys="$num" value="CSRPage"/>
+            </action>
+        </ClickCSRLink>
+        <BusinessTool>
+            <action>
+                <step action="find" keys="BusinessToolLink" type="id"/>
+                <step action="viewmove" keys="BusinessToolLink" type="id"/>
+            </action>
+        </BusinessTool>
+        <ClickBusinessToolLink>
+            <action>
+                <step action="click" keys="BusinessToolLink" type="id"/>
+                <step action="screenshot" keys="$num" value="BusinessToolPage"/>
+            </action>
+        </ClickBusinessToolLink>
+        <breadcrumb>
+            <action>
+                <step action="find" keys="breadcrumb" type="xpath" value="$breacrumb"/>
+                <step action="viewmove" keys="breadcrumb" type="xpath" value="$breacrumb"/>
+            </action>
+            <script>
+                <StepResult description="Click the breadcrumb" result="The page is displayed."/>
+            </script>
+        </breadcrumb>
+        <ClickBreadcrumb>
+            <action>
+                <step action="click" keys="breadcrumb" type="xpath" value="$breacrumb"/>
+            </action>
+        </ClickBreadcrumb>
+        <ValidatePageContent>
+            <action/>
+            <script>
+                <StepResult description="Validate the page displayed is correct"
+                            result="The page displayed is correct"/>
+            </script>
+        </ValidatePageContent>
+    </GlobalHead>
+    <MyAccountSummaryPage>
+        <ClickViewPersonalLink>
+            <action>
+                <step action="click" keys="ViewPersonalLink" type="xpath"/>
+            </action>
+            <script/>
+        </ClickViewPersonalLink>
+        <GoOrderDetailsPgae>
+            <action/>
+            <script/>
+        </GoOrderDetailsPgae>
+        <ClickOrderListingLink>
+            <action>
+                <step action="click" keys="OrderListingLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="OrderListingPage_MyAccount"/>
+            </action>
+        </ClickOrderListingLink>
+        <Reorder>
+            <action/>
+            <script/>
+        </Reorder>
+        <UserApprove>
+            <action/>
+            <script/>
+        </UserApprove>
+        <PRApprove>
+            <action/>
+            <script/>
+        </PRApprove>
+        <ClickQuoteListingLink>
+            <action>
+                <step action="click" keys="QuoteListingLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="QuotesListingPage_MyAccount"/>
+            </action>
+        </ClickQuoteListingLink>
+        <ClickFavoritesLink>
+            <action>
+                <step action="click" keys="FavoritesLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="FavoritesListingPage_MyAccount"/>
+            </action>
+        </ClickFavoritesLink>
+        <FavoritesPage>
+            <action>
+                <step action="click" keys="FavoritesLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="FavoritesListingPage_MyAccount"/>
+            </action>
+            <script>
+                <StepResult description="Click the Favorites link"
+                            result="The link is clicked"/>
+                <StepResult description="Validate the Favorites page is displayed"
+                            result="the page is displayed"/>
+            </script>
+        </FavoritesPage>
+    </MyAccountSummaryPage>
+    <CheckoutPage>
+        <ChangePayment>
+            <action>
+                <step action="select" keys="paymentDropdown" type="id" value="$payment"/>
+                <step action="screenshot" keys="$num" value="PaymentDropdownField"/>
+            </action>
+            <script>
+                <StepResult description="Change the payment on checkout page" result="the payment is change."/>
+                <StepResult description="validate the payment is change." result="the payment is change."/>
+            </script>
+        </ChangePayment>
+        <EditContractInfor>
+            <action>
+                <step action="click" keys="EditContractInforLink" type="id"/>
+                <step action="input" keys="EditContractFirstNameBox" type="id" value="clear"/>
+                <step action="input" keys="EditContractFirstNameBox" type="id" value="$ContractFirstName"/>
+                <step action="input" keys="EditContractLastNameBox" type="id" value="clear"/>
+                <step action="input" keys="EditContractLastNameBox" type="id" value="$ContractLastName"/>
+                <step action="input" keys="EditContractCompanyNameBox" type="id" value="clear"/>
+                <step action="input" keys="EditContractCompanyNameBox" type="id" value="$ContractCompanyName"/>
+                <step action="input" keys="EditContractPhoneBox" type="id" value="$ContractPhone"/>
+                <step action="input" keys="EditContractFaxBox" type="id" value="$ContractFax"/>
+                <step action="input" keys="EditContractEmailIdBox" type="id" value="$ContractEmailId"/>
+                <step action="screenshot" keys="$num" value="EditContractInfor"/>
+                <step action="click" keys="EditContractCancelButton" type="xpath"/>
+                <step action="click" keys="EditContractSaveButton" type="xpath"/>
+            </action>
+        </EditContractInfor>
+        <InputOrderInfor>
+            <action>
+                <step action="input" keys="purchaseOrderNameTextbox" type="xpath" value="$POName"/>
+                <step action="input" keys="purchaseOrderNumberTextbox" type="xpath" value="$PONumber"/>
+                <step action="input" keys="attentionToTextbox" type="id" value="$AttentionBox"/>
+                <step action="input" keys="phoneTextbox" type="id" value="$Phone"/>
+                <step action="screenshot" keys="$num" value="InputOrderInfor"/>
+            </action>
+            <script>
+                <StepResult description="Enter the &lt;&lt;&lt;PO name&gt;&gt;&gt; into the PO name field"
+                            result="The PO name is entered."/>
+                <StepResult description="Enter the &lt;&lt;&lt;PO number&gt;&gt;&gt; into the PO number field"
+                            result="The PO number is entered."/>
+                <StepResult description="Enter the shipping attention to into the Attention to filed."
+                            result="The shipping attention to is entered."/>
+                <StepResult description="Enter the shipping phone number into the shipping phone number field."
+                            result="The shipping phone number is entered."/>
+            </script>
+        </InputOrderInfor>
+        <InputPRInfor>
+            <action>
+                <step action="input" keys="PRNameTextbox" type="xpath" value="$PRName"/>
+                <step action="input" keys="attentionToTextbox" type="id" value="$AttentionBox"/>
+                <step action="input" keys="phoneTextbox" type="id" value="$Phone"/>
+                <step action="screenshot" keys="$num" value="InputPRInfor"/>
+            </action>
+            <script>
+                <StepResult description="Enter the &lt;&lt;&lt;PR name&gt;&gt;&gt; into the PR name field"
+                            result="The PR name is entered."/>
+                <StepResult description="Enter the shipping attention to into the Attention to filed."
+                            result="The shipping attention to is entered."/>
+                <StepResult description="Enter the shipping phone number into the shipping phone number field."
+                            result="The shipping phone number is entered."/>
+            </script>
+        </InputPRInfor>
+        <InputAgentIDField>
+            <action>
+                <step action="input" keys="partnerAgentTextbox" type="xpath" value="$AgentBox"/>
+                <step action="screenshot" keys="$num" value="AgentIDField"/>
+            </action>
+        </InputAgentIDField>
+        <InputEmailNoteField>
+            <action>
+                <step action="input" keys="EmailNoteField" type="id" value="$EmailNote"/>
+                <step action="screenshot" keys="$num" value="EmailNoteField"/>
+            </action>
+        </InputEmailNoteField>
+        <ChangeShipAdress>
+            <action>
+                <step action="click" keys="ChangeShipAdressButton" type="class"/>
+                <step action="select" keys="ChangeShipAdressoption" type="id" value="$ShipAdressoption"/>
+                <step action="find" keys="ChangeShipAdressOKButton" type="class"/>
+                <step action="viewmove" keys="ChangeShipAdressOKButton" type="class"/>
+                <step action="click" keys="ChangeShipAdressOKButton" type="class"/>
+                <step action="screenshot" keys="$num" value="ChangeShipAdress"/>
+                <step action="click" keys="ChangeShipAdressOKButton" type="class"/>
+            </action>
+            <script>
+                <StepResult description="Click the change shipping address button"
+                            result="The change ship address overlay is displayed."/>
+                <StepResult description="Select an shipping address option." result="The option is selected"/>
+                <StepResult description="Click the OK button" result="The shipping address is changed"/>
+            </script>
+        </ChangeShipAdress>
+        <ChangeBillAdress>
+            <action>
+                <step action="click" keys="ChangeBillAdressButton" type="class"/>
+                <step action="select" keys="ChangeBillAdressoption" type="id" value="$BillAdressoption"/>
+                <step action="find" keys="ChangeBillAdressOKbutton" type="class"/>
+                <step action="viewmove" keys="ChangeBillAdressOKbutton" type="class"/>
+                <step action="click" keys="ChangeBillAdressOKbutton" type="class"/>
+                <step action="screenshot" keys="$num" value="ChangeBillAdress"/>
+                <step action="click" keys="ChangeBillAdressOKbutton" type="class"/>
+            </action>
+            <script>
+                <StepResult description="Click the change billing address button"
+                            result="The change bill address overlay is displayed."/>
+                <StepResult description="Select an billing address option." result="The option is selected"/>
+                <StepResult description="Click the OK button" result="The billing address is changed"/>
+            </script>
+        </ChangeBillAdress>
+        <CreateNewShipAdress>
+            <action>
+                <step action="find" keys="CreateNewShipAdressButton" type="xpath"/>
+                <step action="viewmove" keys="CreateNewShipAdressButton" type="xpath"/>
+                <step action="click" keys="CreateNewShipAdressButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="CreateNewShipAdress"/>
+
+            </action>
+        </CreateNewShipAdress>
+        <ChangeShipOption>
+            <action/>
+        </ChangeShipOption>
+        <ChangeProductQty>
+            <action>
+                <step action="input" keys="ChangeProductQtyBox1" type="id" value="$ProductQty"/>
+
+                <step action="screenshot" keys="$num" value="ChangeProductQty"/>
+            </action>
+            <script>
+                <StepResult description="Enter another valid value to the Quantity field of the valid product."
+                            result="The value is entered."/>
+                <StepResult description="Validate the qty is changed." result="The value is entered."/>
+            </script>
+        </ChangeProductQty>
+        <RemoveProduct>
+            <action>
+                <step action="find" keys="RemoveProductLink1" type="id"/>
+                <step action="viewmove" keys="RemoveProductLink1" type="id"/>
+            </action>
+        </RemoveProduct>
+        <ClickProductLink>
+            <action>
+                <step action="click" keys="RemoveProductLink1" type="id"/>
+                <step action="screenshot" keys="$num" value="RemoveProduct"/>
+            </action>
+        </ClickProductLink>
+        <CareParkRegist>
+            <action/>
+        </CareParkRegist>
+        <Submit>
+            <action>
+                <step action="find" keys="SubmitButton" type="id"/>
+                <step action="viewmove" keys="SubmitButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Submit' button again "
+                            result="The confirmation page is displayed "/>
+            </script>
+        </Submit>
+        <ClickSubmitButton>
+            <action>
+                <step action="click" keys="SubmitButton" type="id"/>
+                <step action="screenshot" keys="$num" value="SubmitButton"/>
+            </action>
+        </ClickSubmitButton>
+        <BackCart>
+            <action>
+                <step actiom="find" keys="BackCartButton" type="xpath"/>
+                <step actiom="viewmove" keys="BackCartButton" type="xpath"/>
+            </action>
+        </BackCart>
+        <ClickBackCartButton>
+            <action>
+                <step actiom="click" keys="BackCartButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="BackCartButton"/>
+            </action>
+        </ClickBackCartButton>
+        <InputSPC>
+            <action>
+                <step action="input" keys="SPCBox" type="id" value="$SPC"/>
+                <step action="screenshot" keys="$num" value="SPC"/>
+            </action>
+        </InputSPC>
+        <InputEmailNoteCommentField>
+            <action>
+                <step action="input" keys="EmailComment" type="id" value="$EmailComment"/>
+            </action>
+        </InputEmailNoteCommentField>
+        <InputBillingInvoiceField>
+            <action>
+                <step action="input" keys="BillingInvoice" type="id" value="$BillingInvoice"/>
+            </action>
+        </InputBillingInvoiceField>
+        <InputShippingEmail>
+            <action>
+                <Step action="input" keys="ShippingEmail" type="id" value="$ShippingEmail"/>
+            </action>
+        </InputShippingEmail>
+        <InputShippingFaxField>
+            <action>
+                <step action="input" keys="ShippingFax" type="id" value="$ShippingFax"/>
+            </action>
+        </InputShippingFaxField>
+        <InputShippingInstructionField>
+            <action>
+                <step action="input" keys="ShippingInstr" type="id" value="$ShippingInstr"/>
+            </action>
+        </InputShippingInstructionField>
+        <CheckTC>
+            <action>
+                <step action="check" keys="TCCheckbox" type="id" value="$TCCheckbox"/>
+            </action>
+            <script>
+                <StepResult description="Check the T&amp;C Checkbox" result="The T&amp;C Checkbox is checked."/>
+            </script>
+        </CheckTC>
+    </CheckoutPage>
+    <HomePage>
+        <GoCategoryPage>
+            <action>
+                <step action="click" keys="PointofSaleSystemslink" type="id"/>
+                <step action="screenshot" keys="$num" value="PointofSaleSystemsPage"/>
+                <step action="click" keys="Otherslink" type="id"/>
+                <step action="screenshot" keys="$num" value="OthersPage"/>
+                <step action="click" keys="Accessorieslink" type="id"/>
+                <step action="screenshot" keys="$num" value="AccessoriesPage"/>
+                <step action="click" keys="Monitorslink" type="id"/>
+                <step action="screenshot" keys="$num" value="monitorsPage"/>
+                <step action="click" keys="LaptopsandHybridslink" type="id"/>
+                <step action="screenshot" keys="$num" value="LaptopsandHybridsPage"/>
+                <step action="click" keys="PrintersandMultifunctionlink" type="id"/>
+                <step action="screenshot" keys="$num" value="PrintersandMultifunctionPage"/>
+                <step action="click" keys="DesktopsWorkstationslink" type="id"/>
+                <step action="screenshot" keys="$num" value="DesktopsWorkstationsPage"/>
+                <step action="click" keys="Serviceslink" type="id"/>
+                <step action="screenshot" keys="$num" value="ServicesPage"/>
+            </action>
+        </GoCategoryPage>
+        <GoStandards>
+            <action>
+                <step action="click" keys="StandardsArrow" type="xpath"/>
+                <step action="click" keys="StandardsAddtocartbutton" type="id"/>
+                <step action="click" keys="StandardsSelectOptionsbutton" type="id"/>
+            </action>
+        </GoStandards>
+        <GoFavroites>
+            <action>
+                <step action="click" keys="Viewallbutton" type="xpath"/>
+                <step action="click" keys="FavroitesArrowright" type="xpath"/>
+                <step action="click" keys="FavroitesArrowleft" type="xpath"/>
+                <step action="click" keys="FavroitesAddtocartbutton" type="xpath"/>
+            </action>
+        </GoFavroites>
+        <OrderPRQuoteSection>
+            <action>
+                <step action="click" keys="Viewallorderslink" type="id"/>
+                <step action="click" keys="OrderstatusReferenceIDlink" type="id"/>
+                <step action="click" keys="OrderstatusReorderlink" type="id"/>
+            </action>
+        </OrderPRQuoteSection>
+        <QuickOrder>
+            <action>
+                <step action="click" keys="GOtoQuickOrderbutton" type="xpath"/>
+            </action>
+        </QuickOrder>
+    </HomePage>
+    <SearchResultPage>
+        <Clickfacet>
+            <action>
+                <step action="click" keys="FacetCheckbox" type="xpath"/>
+                <step action="screenshot" keys="$num" value="FacetCheckBox"/>
+            </action>
+            <script>
+                <StepResult description="Clickfacet" result="OK"/>
+            </script>
+        </Clickfacet>
+        <SelectSubcategory>
+            <action>
+                <step action="click" keys="SubcateFacet" type="xpath"/>
+                <step action="screenshot" keys="$num" value="SelectSubcategory"/>
+            </action>
+        </SelectSubcategory>
+        <ClearFacet>
+            <action>
+                <step action="click" keys="ClearFilter" type="id"/>
+                <step action="screenshot" keys="$num" value="ClearFilter"/>
+            </action>
+        </ClearFacet>
+        <CompareCheckbox>
+            <action>
+                <step action="click" keys="CompareCheckbox" type="xpath" value="$CompareCheckbox"/>
+                <step action="screenshot" keys="$num" value="CompareCheckbox"/>
+            </action>
+            <script>
+                <StepResult description="Click the product compareCheckbox." result="the checkbox is clicked"/>
+                <StepResult description="Click the product compareCheckbox." result="the checkbox is clicked"/>
+                <StepResult description="Click the product compare button" result="the compare page is displaye "/>
+            </script>
+        </CompareCheckbox>
+        <CompareButton>
+            <action>
+                <step action="screenshot" keys="$num" value="CompareButton"/>
+                <step action="find" keys="CompareButton" type="xpath"/>
+                <step action="viewmove" keys="CompareButton" type="xpath"/>
+                <step action="click" keys="CompareButton" type="xpath"/>
+            </action>
+        </CompareButton>
+        <ChangeView>
+            <action>
+                <step action="find" keys="ViewIcon" type="xpath"/>
+                <step action="viewmove" keys="ViewIcon" type="xpath"/>
+                <step action="click" keys="ViewIcon" type="xpath"/>
+                <step action="screenshot" keys="$num" value="ChangeView"/>
+            </action>
+            <script>
+                <StepResult description="Click the List view button."
+                            result="The products listing page is displayed with list view."/>
+            </script>
+        </ChangeView>
+        <SortBy>
+            <action>
+                <step action="find" keys="SortbyDropdown" type="xpath"/>
+                <step action="viewmove" keys="SortbyDropdown" type="xpath"/>
+                <step action="click" keys="SortbyDropdown" type="xpath"/>
+                <step action="tableSelect" value="$SortResultPage"/>
+                <step action="screenshot" keys="$num" value="SortBy"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Sort By&quot; dropdown."
+                            result="The DMFI user can sort the products listing page by using the &quot;Sort By&quot; function successfully."/>
+            </script>
+        </SortBy>
+        <ItemsDisplay>
+            <action>
+                <step action="find" keys="ItemDropdown" type="xpath"/>
+                <step action="viewmove" keys="ItemDropdown" type="xpath"/>
+                <step action="click" keys="ItemDropdown" type="xpath"/>
+                <step action="tableSelect" value="$ItemsDropdownDisplay"/>
+                <step action="screenshot" keys="$num" value="ItemsDisplay"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Items Per Page&quot; dropdown."
+                            result="The DMFI user can sort the products listing page by using the &quot;Items Per Page&quot; function successfully."/>
+            </script>
+        </ItemsDisplay>
+        <ChangeQty>
+            <action>
+                <step action="input" keys="FirstQtyBox" type="xpath" value="clear"/>
+                <step action="input" keys="FirstQtyBox" type="xpath" value="$ResultPageFirstQty"/>
+                <step action="screenshot" keys="$num" value="QtyUpdate"/>
+            </action>
+            <script>
+                <StepResult description="Enter the number in the 'Quantity' field."
+                            result="Number is entered in the 'Quantity' field."/>
+                <StepResult description="Locate one product and change the its quantity."
+                            result="The quantity is changed successfully."/>
+            </script>
+        </ChangeQty>
+        <GoPDPByImage>
+            <action>
+                <step action="find" keys="PDPImage" type="xpath"/>
+                <step action="viewmove" keys="PDPImage" type="xpath"/>
+                <step action="click" keys="PDPImage" type="xpath"/>
+                <step action="screenshot" keys="$num" value="PDPPageByImage"/>
+            </action>
+            <script>
+                <StepResult description=" Click one product's image." result="The product's detail page is displayed."/>
+            </script>
+        </GoPDPByImage>
+        <GoPDPByLink>
+            <action>
+                <step action="find" keys="PDPLink" type="xpath"/>
+                <step action="viewmove" keys="PDPLink" type="xpath"/>
+                <step action="click" keys="PDPLink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="PDPPageByLink"/>
+            </action>
+            <script>
+                <StepResult description="Click the Product link." result="The PDP page is displayed."/>
+                <StepResult description=" Click one product's link." result="The product's detail page is displayed."/>
+            </script>
+        </GoPDPByLink>
+        <ClickConfigureButton>
+            <action>
+                <step action="find" keys="ConfigureButton" type="xpath"/>
+                <step action="viewmove" keys="ConfigureButton" type="xpath"/>
+                <step action="click" keys="ConfigureButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="ConfigurationPage"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Configure&quot; button."
+                            result="The Compare Products page is displayed."/>
+            </script>
+        </ClickConfigureButton>
+        <closeerror>
+            <action>
+                <step action="click" keys="Closeerroricon" type="id"/>
+                <step action="screenshot" keys="$num" value="Noerror"/>
+            </action>
+            <script>
+                <StepResult description="Click the cross icon." result="The error message overlay is displayed"/>
+            </script>
+        </closeerror>
+        <Add2CartDict>
+            <action>
+                <step action="click" keys="AddtoCartButton" type="xpath"/>
+                <step action="find" keys="GotoCartButton" type="id"/>
+                <step action="viewmove" keys="GotoCartButton" type="id"/>
+                <step action="click" keys="GotoCartButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Add to cart' button."
+                            result="The Confirmation Mini Cart is displayed."/>
+                <StepResult description="Click the 'Go to Cart' button."
+                            result="The 'Shopping cart' page is displayed with the product added."/>
+                <StepResult description="Validate the Shopping Cart Page is displayed"
+                            result="The Shopping Cart Page is displayed."/>
+            </script>
+        </Add2CartDict>
+        <Add2CartOption>
+            <action>
+                <step action="click" keys="AddtoCartButton" type="id"/>
+                <step action="select" keys="OptionSelect" type="name" value="$Add2CartOption"/>
+                <step action="find" keys="OptionAdd2CartButton" type="id"/>
+                <step action="viewmove" keys="OptionAdd2CartButton" type="id"/>
+                <step action="click" keys="OptionAdd2CartButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Add to cart' button."
+                            result="The OptionCode overlay is displayed."/>
+                <StepResult description="Select the Option code." result="Your desired option is selected"/>
+                <StepResult description="Click the &quot;Add to cart&quot; button."
+                            result="The Confirmation Mini Cart is displayed."/>
+            </script>
+        </Add2CartOption>
+    </SearchResultPage>
+    <ProductDetailPage>
+        <Add2Cart>
+            <action>
+                <step action="click" keys="PDPAdd2CartButton" type="xpath"/>
+                <step action="find" keys="GotoCartButton" type="id"/>
+                <step action="viewmove" keys="GotoCartButton" type="id"/>
+                <step action="screenshot" keys="$num" value="PDPAdd2Cart"/>
+                <step action="click" keys="GotoCartButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Add To Cart' button and then go to Shopping Cart."
+                            result="The product is successfully added to cart."/>
+                <StepResult description="Validate the shopping cart page is displayed"
+                            result="The shopping cart page is displayed."/>
+            </script>
+        </Add2Cart>
+        <Configure>
+            <action>
+                <step action="find" keys="Configbutton" type="xpath"/>
+                <step action="viewmove" keys="Configbutton" type="xpath"/>
+                <step action="click" keys="Configbutton" type="xpath"/>
+                <step action="click" keys="Configbutton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="PDPAdd2Cart"/>
+            </action>
+        </Configure>
+        <OptionCode>
+            <action>
+                <step action="click" keys="OptionBox" type="xpath"/>
+                <step action="tableSelect" value="$optioncode"/>
+                <step action="screenshot" keys="$num" value="OptionCode"/>
+            </action>
+            <script>
+                <StepResult description="Click the Option Button" result="The Option Button is clicked"/>
+                <StepResult description="Select the target Option Code." result="The target Option Code is displayed"/>
+            </script>
+        </OptionCode>
+        <RemoveOptionCode>
+            <action>
+                <step action="click" keys="RemoveOptionIcon" type="xpath"/>
+                <step action="screenshot" keys="$num" value="RemoveOption"/>
+            </action>
+            <script>
+                <StepResult description="Click Remove Option code Icon."
+                            result="The Remove Option code Icon is clicked."/>
+            </script>
+        </RemoveOptionCode>
+        <Qty>
+            <action>
+                <step action="input" keys="OtherQtyInput" type="xpath" value="$DetailPageOtherQty"/>
+                <step action="screenshot" keys="$num" value="QTY"/>
+            </action>
+            <script>
+                <StepResult description="Change the quantity of the product in the Quantity Box."
+                            result="The product quantity is changed."/>
+                <StepResult description="Check the screenshot" result="Check the screenshot."/>
+            </script>
+        </Qty>
+        <SubQty>
+            <action>
+                <step action="input" keys="BunldeQtyInput" type="xpath" value="$BunldeQty"/>
+                <step action="screenshot" keys="$num" value="SubQty"/>
+            </action>
+            <script>
+                <StepResult description="Chang the quantity of the bundle component."
+                            result="The bundle component quantity is changed."/>
+            </script>
+        </SubQty>
+        <ChangeTab>
+            <action>
+                <step action="click" keys="TabSelect" type="xpath" value="$ChangeTab"/>
+                <step action="screenshot" keys="$num" value="ChangeTab"/>
+            </action>
+            <script>
+                <StepResult description="Click the Specifications tab."
+                            result="The correct specifications are displayed under the Specifications tab."/>
+            </script>
+        </ChangeTab>
+        <RelatedProduct>
+            <action>
+                <step action="click" keys="addRelatedButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Add to Cart button&quot; in the related product carousel."
+                            result="The related product add to cart successful."/>
+            </script>
+        </RelatedProduct>
+        <CarePake>
+            <action>
+                <step action="click" keys="addCarepackButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;add a Care Pack&quot; link."
+                            result="The suggest care pack section is displayed which is the lower section of the page."/>
+            </script>
+        </CarePake>
+    </ProductDetailPage>
+    <ProductDetailsPage>
+        <Add2Cart>
+            <action>
+                <step action="click" keys="PDPAdd2CartButton" type="xpath"/>
+                <step action="find" keys="GotoCartButton" type="id"/>
+                <step action="viewmove" keys="GotoCartButton" type="id"/>
+                <step action="screenshot" keys="$num" value="PDPAdd2Cart"/>
+                <step action="click" keys="GotoCartButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Add To Cart' button and then go to Shopping Cart."
+                            result="The product is successfully added to cart."/>
+                <StepResult description="Validate the shopping cart page is displayed"
+                            result="The shopping cart page is displayed."/>
+            </script>
+        </Add2Cart>
+        <Configure>
+            <action>
+                <step action="find" keys="Configbutton" type="xpath"/>
+                <step action="viewmove" keys="Configbutton" type="xpath"/>
+                <step action="click" keys="Configbutton" type="xpath"/>
+                <step action="click" keys="Configbutton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="PDPAdd2Cart"/>
+            </action>
+        </Configure>
+        <OptionCode>
+            <action>
+                <step action="click" keys="OptionBox" type="xpath"/>
+                <step action="tableSelect" value="$optioncode"/>
+                <step action="screenshot" keys="$num" value="OptionCode"/>
+            </action>
+            <script>
+                <StepResult description="Click the Option Button" result="The Option Button is clicked"/>
+                <StepResult description="Select the target Option Code." result="The target Option Code is displayed"/>
+            </script>
+        </OptionCode>
+        <RemoveOptionCode>
+            <action>
+                <step action="click" keys="RemoveOptionIcon" type="xpath"/>
+                <step action="screenshot" keys="$num" value="RemoveOption"/>
+            </action>
+            <script>
+                <StepResult description="Click Remove Option code Icon."
+                            result="The Remove Option code Icon is clicked."/>
+            </script>
+        </RemoveOptionCode>
+        <Qty>
+            <action>
+                <step action="input" keys="OtherQtyInput" type="xpath" value="$DetailPageOtherQty"/>
+                <step action="screenshot" keys="$num" value="QTY"/>
+            </action>
+            <script>
+                <StepResult description="Change the quantity of the product in the Quantity Box."
+                            result="The product quantity is changed."/>
+                <StepResult description="Check the screenshot" result="Check the screenshot."/>
+            </script>
+        </Qty>
+        <SubQty>
+            <action>
+                <step action="input" keys="BunldeQtyInput" type="xpath" value="$BunldeQty"/>
+                <step action="screenshot" keys="$num" value="SubQty"/>
+            </action>
+            <script>
+                <StepResult description="Chang the quantity of the bundle component."
+                            result="The bundle component quantity is changed."/>
+            </script>
+        </SubQty>
+        <ChangeTab>
+            <action>
+                <step action="click" keys="TabSelect" type="xpath" value="$ChangeTab"/>
+                <step action="screenshot" keys="$num" value="ChangeTab"/>
+            </action>
+            <script>
+                <StepResult description="Click the Specifications tab."
+                            result="The correct specifications are displayed under the Specifications tab."/>
+            </script>
+        </ChangeTab>
+        <RelatedProduct>
+            <action>
+                <step action="click" keys="addRelatedButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Add to Cart button&quot; in the related product carousel."
+                            result="The related product add to cart successful."/>
+            </script>
+        </RelatedProduct>
+        <CarePake>
+            <action>
+                <step action="click" keys="addCarepackButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;add a Care Pack&quot; link."
+                            result="The suggest care pack section is displayed which is the lower section of the page."/>
+            </script>
+        </CarePake>
+    </ProductDetailsPage>
+    <CreateShipAddressPage>
+        <ShipInfor>
+            <action>
+                <step action="click" keys="OnTheFlyShippingAddress" type="xpath"/>
+                <step action="screenshot" keys="$num" value="CreateShipAddressPage"/>
+                <step action="find" keys="CreateNewShippingAddressNew" type="xpath"/>
+                <step action="viewmove" keys="CreateNewShippingAddressNew" type="xpath"/>
+                <step action="click" keys="CreateNewShippingAddressNew" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Ship to new addresses&quot; button on the module."
+                            result="The Create new shipping address page is displayed."/>
+            </script>
+        </ShipInfor>
+        <OrgName>
+            <action>
+                <step action="input" keys="OrgName" type="id" value="$CreateShipAddressOrgName"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid company name in the Company textbox."
+                            result="The Company name is entered."/>
+            </script>
+        </OrgName>
+        <AttendTo>
+            <action>
+                <step action="input" keys="AttendTo" type="id" value="$CreateShipAddressAttendTo"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid Organization name in the Attend to textbox."
+                            result="The Organization name is entered."/>
+            </script>
+        </AttendTo>
+        <Address1>
+            <action>
+                <step action="input" keys="Address1" type="id" value="$CreateShipAddressAddress1"/>
+            </action>
+        </Address1>
+        <City>
+            <action>
+                <step action="input" keys="City" type="id" value="$CreateShipAddressCity"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid city name in the City textbox."
+                            result="The City name is entered."/>
+            </script>
+        </City>
+        <State>
+            <action>
+                <step action="input" keys="State" type="id" value="$CreateShipAddressState"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid  State / Province in the State / Province textbox."
+                            result="The State / Province is entered."/>
+            </script>
+        </State>
+        <ZipCode>
+            <action>
+                <step action="input" keys="ZipCode" type="id" value="$CreateShipAddressZipCode"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid  Zip code / Postal code in the Zip code / Postal code textbox."
+                            result="The Zip code / Postal code is entered."/>
+            </script>
+        </ZipCode>
+        <Phone>
+            <action>
+                <step action="input" keys="Phone" type="id" value="$CreateShipAddressPhone"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid  Phone number in the Phone textbox."
+                            result="The Phone number is entered."/>
+            </script>
+        </Phone>
+        <Email>
+            <action>
+                <step action="input" keys="Email" type="id" value="$CreateShipAddressEmail"/>
+            </action>
+            <script>
+                <StepResult description="Enter valid Email address in the Email address textbox."
+                            result="The email address is entered."/>
+            </script>
+        </Email>
+        <Submit>
+            <action>
+                <step action="screenshot" keys="$num" value="CreateShipAddressPage"/>
+                <step action="find" keys="SubmitButton" type="xpath"/>
+                <step action="viewmove" keys="SubmitButton" type="xpath"/>
+                <step action="click" keys="SubmitButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the Submit button on the Create new shipping address page."
+                            result="The Checkout page is displayed."/>
+            </script>
+        </Submit>
+        <Cancel>
+            <action>
+                <step action="find" keys="CancelButton" type="xpath"/>
+                <step action="viewmove" keys="CancelButton" type="xpath"/>
+                <step action="click" keys="CancelButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the Cancel button on the Create new shipping address page."
+                            result="The Checkout page is displayed."/>
+            </script>
+        </Cancel>
+        <AddtoMyaddressCheckBox>
+            <action>
+                <step action="click" keys="AddtoMyaddressCheckBox" type="xpath"/>
+                <step action="screenshot" keys="$num" value="AddtoMyaddressCheckBox"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Add to my Shipping Addresses&quot; checkbox."
+                            result="The &quot;Add to my Shipping Addresses&quot; checkbox is checked."/>
+            </script>
+        </AddtoMyaddressCheckBox>
+    </CreateShipAddressPage>
+    <PRConfirmationPage>
+        <BackCart>
+            <action>
+                <step action="screenshot" value="PRConfirmationPage"/>
+                <step action="find" keys="BackCart" type="id"/>
+                <step action="viewmove" keys="BackCart" type="id"/>
+                <step action="click" keys="BackCart" type="id"/>
+                <step action="screenshot" keys="$num" value="ShoppingCartPage"/>
+            </action>
+        </BackCart>
+        <Print>
+            <action>
+                <step action="screenshot" keys="$num" value="PRConfirmationPage"/>
+                <step action="click" keys="Print" type="id"/>
+                <step action="screenshot" keys="$num" value="PrintPreviewPage"/>
+            </action>
+            <script>
+                <StepResult
+                        description="Click the &quot;Print&quot; button on the Purchase Request Confirmation page.&#10;Note: The Print Preview page is opened based on the browser selected, if the browser is Chrome, then the Print Preview page is opened."
+                        result="The browser's print GUI is opened."/>
+            </script>
+        </Print>
+        <ContinueShopping>
+            <action>
+                <step action="click" keys="ContinueShoppingButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Continue shopping&quot; button."
+                            result="The Home page is displayed."/>
+            </script>
+        </ContinueShopping>
+        <ValidatePageContent>
+            <action/>
+            <script>
+                <StepResult description="The PR confirmation page is displayed."
+                            result="The PR confirmation page is displayed."/>
+            </script>
+        </ValidatePageContent>
+    </PRConfirmationPage>
+    <ShoppingCartPage>
+        <ChangeProductQty>
+            <action>
+                <step action="input" keys="FirstQtybox" type="xpath" value="clear"/>
+                <step action="input" keys="FirstQtybox" type="xpath" value="$FirstQty"/>
+            </action>
+            <script>
+                <StepResult
+                        description="Change the quantity of the item in the cart on the Shopping cart page and validate that the error messages are still displayed."
+                        result="Error message 'Please enter a [field label]' is still displayed."/>
+                <StepResult description="Enter another valid value to the Quantity field of the valid product."
+                            result="The value is entered."/>
+                <StepResult description="Click the &quot;Update&quot; link beside the Quantity field. "
+                            result="The quantity is updated."/>
+            </script>
+        </ChangeProductQty>
+        <RemoveProduct>
+            <action>
+                <step action="find" keys="FirstRemoveLink" type="xpath"/>
+                <step action="viewmove" keys="FirstRemoveLink" type="xpath"/>
+                <step action="click" keys="FirstRemoveLink" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Remove&quot; link below a product."
+                            result="The product is successfully removed."/>
+            </script>
+        </RemoveProduct>
+        <ContinueShopping>
+            <action>
+                <step action="find" keys="ContinueShoppingButton" type="xpath"/>
+                <step action="viewmove" keys="ContinueShoppingButton" type="xpath"/>
+                <step action="click" keys="ContinueShoppingButton" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Continue shopping&quot; button."
+                            result="The Home page is displayed."/>
+            </script>
+        </ContinueShopping>
+        <CheckOut>
+            <action>
+                <step action="screenshot" keys="$num" value="CheckOutPage"/>
+                <step action="find" keys="CheckoutButton" type="id"/>
+                <step action="viewmove" keys="CheckoutButton" type="id"/>
+                <step action="click" keys="CheckoutButton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the 'Check Out' button." result="The Checkout page is displayed."/>
+                <StepResult description="Click the &quot;Check Out&quot; button on the Shopping Cart page."
+                            result="The Check Out page is displayed."/>
+            </script>
+        </CheckOut>
+        <NewQuote>
+            <action>
+                <step action="find" keys="SaveQuoteLink" type="id"/>
+                <step action="viewmove" keys="SaveQuoteLink" type="id"/>
+                <step action="click" keys="SaveQuoteLink" type="id"/>
+                <step action="screenshot" keys="$num" value="NewQuotePage"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Save as quote&quot; link."
+                            result="The &quot;Create new quote&quot; page is displayed."/>
+            </script>
+        </NewQuote>
+        <NewPresonFavrite>
+            <action>
+                <step action="click" keys="SaveFavLink" type="id"/>
+                <step action="input" keys="FavNamebox" type="id" value="$NewPresonFavriteName"/>
+                <step action="screenshot" keys="$num" value="NewPresonFavrite"/>
+                <step action="find" keys="FavSaveButton" type="xpath"/>
+                <step action="viewmove" keys="FavSaveButton" type="xpath"/>
+                <step action="click" keys="FavSaveButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="SavePresonFavrite"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Save as favorite&quot; link."
+                            result="The &quot;Save as favorite&quot; window is displayed."/>
+                <StepResult description="Enter a favorite name into the &quot;Favorite name&quot; field."
+                            result="A favorite name is entered into the &quot;Favorite name&quot; field."/>
+                <StepResult description="Click the &quot;Save&quot; button."
+                            result="1. A message is displayed in the global header saying &quot;The favorite has been successfully created.&quot;&#10;2. The &quot;Save as favorite&quot; window is closed."/>
+            </script>
+        </NewPresonFavrite>
+        <CancelButtonFavrite>
+            <action>
+                <step action="click" keys="SaveFavLink" type="id"/>
+                <step action="input" keys="FavNamebox" type="id" value=""/>
+                <step action="screenshot" keys="$num" value="NewPresonFavrite"/>
+                <step action="find" keys="FavCancelButton" type="xpath"/>
+                <step action="viewmove" keys="FavCancelButton" type="xpath"/>
+                <step action="click" keys="FavCancelButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="CancelFavrite"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Cancel&quot; link." result="The favorite overlay is closed. "/>
+            </script>
+        </CancelButtonFavrite>
+        <CloseButtonFavrite>
+            <action>
+                <step action="click" keys="SaveFavLink" type="id"/>
+                <step action="input" keys="FavNamebox" type="id" value=""/>
+                <step action="screenshot" keys="$num" value="NewPresonFavrite"/>
+                <step action="find" keys="FavCloseicon" type="xpath"/>
+                <step action="viewmove" keys="FavCloseicon" type="xpath"/>
+                <step action="click" keys="FavCloseicon" type="xpath"/>
+                <step action="screenshot" keys="$num" value="CancelFavrite"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Close icon&quot; link."
+                            result="The favorite overlay is closed. "/>
+            </script>
+        </CloseButtonFavrite>
+        <NewOrgFavrite>
+            <action>
+                <step action="click" keys="SaveFavLink" type="id"/>
+                <step action="input" keys="FavNamebox" type="id" value="$NewOrgFavriteName"/>
+                <step action="click" keys="FavDropdown" type="class"/>
+                <step action="screenshot" keys="$num" value="FavoriteDropdown"/>
+                <step action="select" keys="FavDropdown" type="class" value="$NewOrgFavriteDropdown"/>
+                <step action="find" keys="FavSaveButton" type="xpath"/>
+                <step action="viewmove" keys="FavSaveButton" type="xpath"/>
+                <step action="click" keys="FavSaveButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="NewOrgFavrite"/>
+            </action>
+            <script>
+                <StepResult
+                        description="Click the &quot;Save as Favorite&quot; link at the bottom of the Summary section."
+                        result="The Create new favorite overlay is displayed. "/>
+                <StepResult description="Enter a name in the &quot;Favorite name&quot; field."
+                            result="The favorite name is entered."/>
+                <StepResult description="Click the &quot;Type&quot; dropdown."
+                            result="The type dropdown list is displayed."/>
+                <StepResult description="Click the &quot;organizational &quot; option from the Type dropdown list."
+                            result="The &quot;organizational &quot; option is selected."/>
+                <StepResult description="Click the &quot;Save&quot; button."
+                            result="The Create new favorite overlay is closed. "/>
+            </script>
+        </NewOrgFavrite>
+        <ApplySPC>
+            <action/>
+            <script>
+                <StepResult
+                        description="Enter the valid special pricing code in the &quot;Special pricing code&quot; field."
+                        result="The special pricing code is entered."/>
+                <StepResult description="Click the &quot;Apply&quot; link."
+                            result="The special pricing code is applied."/>
+            </script>
+        </ApplySPC>
+        <RemoveSpc>
+            <action/>
+            <script>
+                <StepResult description="Click the &quot;Remove&quot; link below the Special Pricing Code entry field."
+                            result="1. The &quot;Remove&quot; link and the displayed special pricing code is not displayed.&#10;2. The Special Pricing callouts by the special pricing code applied to the order is removed from the product prices."/>
+            </script>
+        </RemoveSpc>
+        <GoE-ConfigPage>
+            <action/>
+            <script>
+                <StepResult description="Locate a CTO product." result="The CTO product is located."/>
+                <StepResult description="Click the &quot;Edit&quot; link."
+                            result="The configuration page of  a CTO product is displayed."/>
+            </script>
+        </GoE-ConfigPage>
+        <ShowKitDetail>
+            <action>
+                <step action="find" keys="Kitdetails" type="xpath"/>
+                <step action="viewmove" keys="Kitdetails" type="xpath"/>
+                <step action="click" keys="Kitdetails" type="xpath"/>
+                <step action="screenshot" keys="$num" value="ShowKitDetail"/>
+            </action>
+            <script>
+                <StepResult description="Locate a Kit product." result="The Kit product is located."/>
+                <StepResult description="Click the &quot;Expand Details&quot; link for the Kit product."
+                            result="The kit details are displayed."/>
+            </script>
+        </ShowKitDetail>
+        <HideKitDetail>
+            <action>
+                <step action="find" keys="Kitdetails" type="xpath"/>
+                <step action="viewmove" keys="Kitdetails" type="xpath"/>
+                <step action="click" keys="Kitdetails" type="xpath"/>
+                <step action="screenshot" keys="$num" value="HideKitDetail"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Hide Details&quot; link for the Kit product."
+                            result="The kit details are hided."/>
+            </script>
+        </HideKitDetail>
+        <RelatedProduct>
+            <action/>
+            <script>
+                <StepResult description="Locate a product in the Recommended product carousel."
+                            result="The product is located."/>
+                <StepResult description="Click the &quot;Add to cart&quot; button for the product."
+                            result="The cart confirmation overlay is displayed."/>
+            </script>
+        </RelatedProduct>
+        <GoPDPByImage>
+            <action>
+                <step action="find" keys="FirstImg" type="xpath"/>
+                <step action="viewmove" keys="FirstImg" type="xpath"/>
+                <step action="click" keys="FirstImg" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the Image for the product."
+                            result="The product detail page is displayed."/>
+            </script>
+        </GoPDPByImage>
+        <GoPDPByLink>
+            <action>
+                <step action="find" keys="FirstLink" type="xpath"/>
+                <step action="viewmove" keys="FirstLink" type="xpath"/>
+                <step action="click" keys="FirstLink" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the product name for the product."
+                            result="The product detail page is displayed."/>
+            </script>
+        </GoPDPByLink>
+    </ShoppingCartPage>
+    <PRtoApprovePage>
+        <GoToPRDetail>
+            <action>
+                <step action="click" keys="Actionsbutton" type="xpath"/>
+                <step action="find" keys="Viewdetailslink" type="id"/>
+                <step action="viewmove" keys="Viewdetailslink" type="id"/>
+                <step action="click" keys="Viewdetailslink" type="id"/>
+            </action>
+        </GoToPRDetail>
+        <SearchInfor>
+            <action>
+                <step action="click" keys="Searchoptionslink" type="id"/>
+                <step action="input" keys="Requesterfirstnametextbox" type="id"/>
+                <step action="input" keys="Requesterlastnametextbox" type="id"/>
+                <step action="input" keys="ReferenceIDtextbox" type="id"/>
+                <step action="input" keys="Startdatetextbox" type="name"/>
+                <step action="input" keys="Enddatetextbox" type="name"/>
+            </action>
+            <script>
+                <StepResult description="Click the down arrow(v) icon beside &quot;Search options&quot;."
+                            result="All the search fields are displayed."/>
+                <StepResult
+                        description="Enter the purchase request information into the corresponding search fields (e.g. enter a requester first name into the &quot;Requester first name&quot; field).&#10;"
+                        result="The purchase request information is entered into the corresponding search fields."/>
+            </script>
+        </SearchInfor>
+        <ClearResult>
+            <action>
+                <step action="click" keys="Clearresultlink" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Clear results&quot; button."
+                            result="The page is refreshed and other purchase requests are displayed."/>
+            </script>
+        </ClearResult>
+        <SearchButton>
+            <action>
+                <step action="click" keys="Searchbutton" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Search&quot; button."
+                            result="The matched purchase requests are displayed below."/>
+            </script>
+        </SearchButton>
+        <ViewDropDown>
+            <action>
+                <step action="click" keys="ViewDropDown" type="id"/>
+            </action>
+            <script>
+                <StepResult
+                        description="Click the gear-shaped icon in the &quot;Actions&quot; column for the purchase request line item."
+                        result="The action menu is displayed."/>
+            </script>
+        </ViewDropDown>
+        <Reject>
+            <action>
+                <step action="click" keys="Rejectlink" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Reject&quot; link in th menu."
+                            result="The PR is rejected successfully."/>
+            </script>
+        </Reject>
+    </PRtoApprovePage>
+    <GlobalFooter>
+        <SubmitWebRequest>
+            <action>
+                <step action="find" keys="WebRequestLink" type="id"/>
+                <step action="viewmove" keys="WebRequestLink" type="id"/>
+                <step action="find" keys="WebRequestLink" type="id"/>
+                <step action="viewmove" keys="WebRequestLink" type="id"/>
+                <step action="click" keys="WebRequestLink" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the SubmitWebRequest link."
+                            result="The SubmitWebRequestLink is clicked"/>
+            </script>
+        </SubmitWebRequest>
+        <ViewAllContacts>
+            <action>
+                <step action="find" keys="ViewAllContactsLink" type="xpath"/>
+                <step action="viewmove" keys="ViewAllContactsLink" type="xpath"/>
+                <step action="click" keys="ViewAllContactsLink" type="xpath"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;View all HP Contacts&quot; link in the global footer."
+                            result="The View all HP Contacts page is displayed."/>
+            </script>
+        </ViewAllContacts>
+        <SiteMap>
+            <action>
+                <step action="find" keys="SiteMapLink" type="id"/>
+                <step action="viewmove" keys="SiteMapLink" type="id"/>
+                <step action="click" keys="SiteMapLink" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Click the &quot;Site Map&quot; link in the global footer."
+                            result="The Site Map page is displayed."/>
+            </script>
+        </SiteMap>
+    </GlobalFooter>
+    <QuickOrder>
+        <Add2Cart>
+            <action>
+                <step action="click" keys="" type="id"/>
+            </action>
+            <script>
+                <StepResult description="Enter an valid product number in the &quot;Product Number&quot;  textboxes."
+                            result="Product number is entered."/>
+                <StepResult description="Enter an valid quantity in the &quot;Quantity&quot; textboxes."
+                            result="Quantity is entered."/>
+                <StepResult description="Click the &quot;Add to cart&quot; button."
+                            result="The Shopping Cart page is displayed."/>
+            </script>
+        </Add2Cart>
+    </QuickOrder>
+    <CustomerServicePage>
+        <Impersonate>
+            <action>
+                <step action="click" keys="SerachBar" type="xpath"/>
+                <step action="input" keys="LoginIDbox" type="id" value="$ImUsername"/>
+                <step action="click" keys="SearchButton" type="id"/>
+                <step action="screenshot" keys="$num" value="SearchImpersonaterUser"/>
+                <step action="click" keys="FirstGearicon" type="class_name"/>
+                <step action="find" keys="ImpersonateItem" type="xpath"/>
+                <step action="viewmove" keys="ImpersonateItem" type="xpath"/>
+                <step action="click" keys="ImpersonateItem" type="xpath"/>
+            </action>
+        </Impersonate>
+    </CustomerServicePage>
+    <BrowsingHistoryPage>
+        <ChangeQty>
+            <action>
+                <step action="input" keys="FirstQtybox" type="xpath" value="clear"/>
+                <step action="input" keys="FirstQtybox" type="xpath" value="$Qty"/>
+                <step action="screenshot" keys="$num" value="ChangeQty"/>
+            </action>
+            <script>
+                <StepResult description="Enter the number into the quantity box"
+                            result="The entered number is displayed."/>
+            </script>
+        </ChangeQty>
+        <ClickConfigureButton>
+            <action>
+                <step action="find" keys="ConfigureButton" type="xpath"/>
+                <step action="viewmove" keys="ConfigureButton" type="xpath"/>
+                <step action="click" keys="ConfigureButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="ClickConfigureButton"/>
+            </action>
+            <script>
+                <StepResult description="Click the configure button under a CTO"
+                            result="The E-config page is displayed"/>
+            </script>
+        </ClickConfigureButton>
+        <Selectoption>
+            <action>
+                <step action="find" keys="SelectButton" type="xpath"/>
+                <step action="viewmove" keys="SelectButton" type="xpath"/>
+                <step action="click" keys="SelectButton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="ClickSelectButton"/>
+            </action>
+            <script>
+                <StepResult description="Click the select options button under a bundle"
+                            result="The bundle detail page is displayed."/>
+            </script>
+        </Selectoption>
+        <add2cart>
+            <action>
+                <step action="find" keys="FirstA2Cbutton" type="xpath"/>
+                <step action="viewmove" keys="FirstA2Cbutton" type="xpath"/>
+                <step action="click" keys="FirstA2Cbutton" type="xpath"/>
+                <step action="screenshot" keys="$num" value="add2cart"/>
+            </action>
+            <script>
+                <StepResult description="Click the add to cart button." result="The product is added to the cart"/>
+            </script>
+        </add2cart>
+    </BrowsingHistoryPage>
+    <OrderListingPage>
+        <GoDetailsPage>
+            <action>
+                <step action="find" keys="FirstRIDlink" type="xpath"/>
+                <step action="viewmove" keys="FirstRIDlink" type="xpath"/>
+                <step action="click" keys="FirstRIDlink" type="xpath"/>
+                <step action="screenshot" keys="$num" value="GoDetailsPage"/>
+            </action>
+        </GoDetailsPage>
+    </OrderListingPage>
+</Scripts>
